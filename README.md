@@ -24,3 +24,8 @@ Realiza las tareas básicas de la post-instalación de un sistema GNU/Linux basa
 La salida es la IP pública reportada por dyndns.org.
 
 Requiere: curl
+
+### update-youtube-dl.sh
+Instala y actualiza youtube-dl. Script del sitio oficial [youtube-dl.org]: https://youtube-dl.org/
+
+Requiere: wget
