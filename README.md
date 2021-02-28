@@ -19,3 +19,8 @@ Requiere: imagemagick
 
 ### new-ubuntu-2004.sh
 Realiza las tareas básicas de la post-instalación de un sistema GNU/Linux basado en Ubuntu 20.04; Incluyendo herramientas básicas para usar en la consola, distintos shell alternativos a bash, instala el servidor SSH. Para cuando se trate de una instalación con entorno de escritorio installa Google Chrome y Google Earth desde los repositorios oficiales de paquetes DEB, clientes de torrent Transmission y opciones según el entorno específico. También clona el presente repositorio instalando copias ejecutables de los scripts y los usa para configurar SSH e instalar el cliente de Nextcloud.
+
+### my-public-ip.sh
+La salida es la IP pública reportada por dyndns.org.
+
+Requiere: curl
