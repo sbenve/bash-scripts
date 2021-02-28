@@ -31,6 +31,11 @@ function desktop-extra {
 apt-get install -y libemail-outlook-message-perl filezilla \
         imagemagick ffmpeg handbrake simple-scan subtitleeditor;
 
+#inkscape
+add-apt-repository ppa:inkscape.dev/stable
+apt-get update
+apt-get install inkscape
+
 #google chrome y earth
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-apps.list
 echo "deb [arch=amd64] http://dl.google.com/linux/earth/deb/ stable main" >> /etc/apt/sources.list.d/google-apps.list
@@ -84,14 +89,18 @@ case $1 in
         *)
                 echo "$0 [xfce|gnome|kde|server]" && exit 1;;
 esac
+
 #ejecuta instalación básica
 basic-install
+
 #obtiene el resto de los scripts del repositorio git
 cd /tmp
 git clone https://github.com/sbenve/bash-scripts.git
 chmod +x bash-scripts/*.sh
 mv bash-scripts/*.sh /usr/local/bin
 /usr/local/bin/update-authorizedkeys.sh ##hay que cambiar la dirección generica del archivo en el repositorio git
+/usr/local/bin/update-youtube-dl.sh
+
 #ejecuta instalación por tipo de esctirorio
 $TARGET-install
 if [ "$TARGET" != 'server' ]
