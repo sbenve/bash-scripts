@@ -18,7 +18,8 @@ apt-get install -y ssh wireguard avahi-daemon ethtool wakeonlan \
         axel aria2 curl wget rsync git \
         fish zsh bash-completion \
         hddtemp lm-sensors \
-        lvm2 most unp unzip dosfstools;
+        lvm2 most unp unzip dosfstools \
+	zulumount-cli zulumount-cli dislocker gnupg;
 cp /usr/share/doc/avahi-daemon/examples/s* /etc/avahi/services/
 systemctl enable ssh
 systemctl restart ssh
@@ -29,7 +30,8 @@ systemctl restart avahi-daemon
 function desktop-extra {
 #herramientas
 apt-get install -y libemail-outlook-message-perl filezilla \
-        imagemagick ffmpeg handbrake simple-scan subtitleeditor;
+        imagemagick ffmpeg handbrake simple-scan subtitleeditor \
+	dialog zulucrypt-gui zulumount-gui audacity;
 
 #inkscape
 add-apt-repository ppa:inkscape.dev/stable
@@ -52,7 +54,7 @@ chmod 750 /home/*
 
 #instalación por entorno de escritorio
 function xfce-install {
-apt-get install -y zenity transmission-gtk transmission-remote-gtk
+apt-get install -y zenity transmission-gtk transmission-remote-gtk tilda
 #ksuperkey
 apt-get install -y git gcc make libx11-dev libxtst-dev pkg-config
 mkdir /tmp/compile-ksuper
@@ -65,15 +67,15 @@ chmod 755 /usr/local/bin/ksuperkey
 }
 
 function gnome-install {
-apt-get install -y zenity transmission-gtk transmission-remote-gtk
+apt-get install -y zenity transmission-gtk transmission-remote-gtk tilda
 }
 
 function kde-install {
-apt-get install -y kdialog transmission-qt
+apt-get install -y kdialog transmission-qt yakuake
 }
 
 function server-install {
-apt-get install -y unattended-upgrades 
+apt-get install -y unattended-upgrades nfs-server
 }
 
 #arrancamos
