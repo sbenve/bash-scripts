@@ -19,7 +19,7 @@ apt-get install -y ssh wireguard avahi-daemon ethtool wakeonlan \
         fish zsh bash-completion \
         hddtemp lm-sensors \
         lvm2 most unp unzip dosfstools \
-	zulumount-cli zulumount-cli dislocker gnupg;
+	zulumount-cli zulumount-cli dislocker gnupg gocryptfs ecryptfs-utils;
 cp /usr/share/doc/avahi-daemon/examples/s* /etc/avahi/services/
 systemctl enable ssh
 systemctl restart ssh
