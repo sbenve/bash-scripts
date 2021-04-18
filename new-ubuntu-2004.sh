@@ -34,16 +34,18 @@ apt-get install -y libemail-outlook-message-perl filezilla \
 	dialog zulucrypt-gui zulumount-gui audacity;
 
 #inkscape
-add-apt-repository ppa:inkscape.dev/stable
+add-apt-repository -y ppa:inkscape.dev/stable
 apt-get update
-apt-get install inkscape
+apt-get install -y inkscape
 
 #google chrome y earth
+#crea un solo archivo de fuente de apt para las aplicaciones de google
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-apps.list
 echo "deb [arch=amd64] http://dl.google.com/linux/earth/deb/ stable main" >> /etc/apt/sources.list.d/google-apps.list
 wget -q "https://dl.google.com/linux/linux_signing_key.pub" -O- | apt-key add -
 apt-get update
 apt-get install -y google-chrome-stable google-earth-pro-stable
+rm /etc/apt/sources.list.d/google-{chrome,earth-pro}.list #borra los archivos de fuentes creados por la instalación
 
 #crea usuario secundario
 useradd --create-home --uid 1001 --password 123456 second ## CAMBIAR A GUSTO
