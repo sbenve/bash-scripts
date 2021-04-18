@@ -30,8 +30,10 @@ systemctl restart avahi-daemon
 function desktop-extra {
 #herramientas
 apt-get install -y libemail-outlook-message-perl filezilla \
-        imagemagick ffmpeg handbrake simple-scan subtitleeditor \
-	dialog zulucrypt-gui zulumount-gui audacity;
+        imagemagick nomacs nomacs-l10n ffmpeg handbrake \
+	simple-scan subtitleeditor audacity \
+	dialog zulucrypt-gui zulumount-gui \
+	libreoffice-l10n-es libreoffice-help-es thunderbird-locale-es-ar ;
 
 #inkscape
 add-apt-repository -y ppa:inkscape.dev/stable
