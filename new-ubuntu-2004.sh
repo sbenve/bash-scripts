@@ -97,6 +97,12 @@ fi
 echo "$TARGET"
 }
 
+function lidswitch-mod {
+lidfile="/etc/systemd/logind.conf"
+sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' "$lidfile"
+sed -i 's/#HandleLidSwitchExternalPower=suspend/HandleLidSwitchExternalPower=ignore/g' "$lidfile"
+sed -i 's/#HandleLidSwitchDocked=ignore/HandleLidSwitchDocked=ignore/g' "$lidfile"
+}
 
 #arrancamos
 case $1 in
@@ -123,6 +129,7 @@ chmod +x bash-scripts/*.sh
 mv bash-scripts/*.sh /usr/local/bin
 /usr/local/bin/update-authorizedkeys.sh ##hay que cambiar la dirección generica del archivo en el repositorio git
 /usr/local/bin/update-youtube-dl.sh
+lidswitch-mod
 
 #ejecuta instalación por tipo de esctirorio
 $TARGET-install
