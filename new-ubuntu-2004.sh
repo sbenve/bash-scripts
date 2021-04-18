@@ -75,7 +75,7 @@ apt-get install -y zenity transmission-gtk transmission-remote-gtk tilda
 }
 
 function kde-install {
-apt-get install -y kdialog transmission-qt yakuake
+apt-get install -y kdialog transmission-remote-gtk yakuake
 }
 
 function server-install {
