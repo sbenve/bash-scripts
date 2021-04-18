@@ -76,6 +76,7 @@ apt-get install -y zenity transmission-gtk transmission-remote-gtk tilda
 
 function kde-install {
 apt-get install -y kdialog transmission-remote-gtk yakuake
+apt-get remove -y gwenview
 }
 
 function server-install {
