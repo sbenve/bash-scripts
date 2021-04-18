@@ -80,6 +80,21 @@ function server-install {
 apt-get install -y unattended-upgrades nfs-server
 }
 
+
+function test-desktop {
+echo "Detectando el entorno de escritorio..."
+if [ "$XDG_CURRENT_DESKTOP" = "" ]
+then
+  TARGET="server"
+else
+        echo "$XDG_CURRENT_DESKTOP" | grep -i gnome && TARGET="gnome"
+        echo "$XDG_CURRENT_DESKTOP" | grep -i xfce && TARGET="xfce"
+        echo "$XDG_CURRENT_DESKTOP" | grep -i kde && TARGET="kde"
+fi
+echo "$TARGET"
+}
+
+
 #arrancamos
 case $1 in
         xfce)
@@ -91,7 +106,8 @@ case $1 in
         server)
                 TARGET="$1" ;;
         *)
-                echo "$0 [xfce|gnome|kde|server]" && exit 1;;
+		test-desktop ;;
+#                echo "$0 [xfce|gnome|kde|server]" && exit 1;;
 esac
 
 #ejecuta instalación básica
