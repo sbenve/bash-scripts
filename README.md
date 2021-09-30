@@ -29,3 +29,6 @@ Requiere: curl
 Instala y actualiza youtube-dl. Script del sitio oficial [youtube-dl.org](https://youtube-dl.org)
 
 Requiere: wget
+
+### xfce-mood.sh
+Cambia entre temas claro y oscuro en XFCE. Incluye cambio de tema de la terminal usando de base xubuntu-dark/light, pero habilitando el resaltado del texto seleccionado tradicional. Con el tema por defecto de XFWM4 el color del marco de la ventana acompaña el color del tema gtk.
