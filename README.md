@@ -32,3 +32,6 @@ Requiere: wget
 
 ### xfce-mood.sh
 Cambia entre temas claro y oscuro en XFCE. Incluye cambio de tema de la terminal usando de base xubuntu-dark/light, pero habilitando el resaltado del texto seleccionado tradicional. Con el tema por defecto de XFWM4 el color del marco de la ventana acompaña el color del tema gtk.
+
+### remove-prev-snap.sh
+Para ahorrar espacio cuando se usan paquetes snap en ubuntu, siendo dos revisiones las instaladas, remueve la menor.
